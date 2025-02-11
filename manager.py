@@ -31,7 +31,15 @@ def url_open(url):
 
 def btn2_clicked():
     print("Saved Shortcut: " + txt.get() + "|" + txt1.get())
-    file.write("\n" + txt.get() + "|" + txt1.get())
+    #file.write("\n" + txt.get() + "|" + txt1.get())
+    print(len(read))
+    if len(read) == 0:
+        file.write(txt.get() + "|" + txt1.get())
+    elif read[len(read)-1].find("\n") > 0:
+        file.write(txt.get() + "|" + txt1.get())
+    else:
+        file.write("\n" + txt.get() + "|" + txt1.get())
+    
 
 def open_help():
     print("help")
